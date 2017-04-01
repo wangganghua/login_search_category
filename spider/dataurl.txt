@@ -1,5 +1,6 @@
 (无列名)18053276660
 xiaoxin123
+117.122.192.50, 6479
 {"category": "净水器","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=350504&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "电烤箱","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50002894&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "微波炉","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50002809&pcid=4&brand=&type=B&date=&pageNo=1"}
