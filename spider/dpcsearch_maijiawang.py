@@ -15,7 +15,6 @@ import urllib
 from PIL import Image, ImageEnhance
 from datetime import datetime
 from pytesser import *
-import cStringIO
 import os
 
 default_encoding = "utf-8"
@@ -26,9 +25,9 @@ if sys.getdefaultencoding() != default_encoding:
 rconnection_yz = redis.Redis(host='117.122.192.50', port=6479, db=0)
 rconnection_test = redis.Redis(host='192.168.2.245', port=6379, db=0)
 # 代理ip
-redis_key_proxy = "proxy:iplist4"
+redis_key_proxy = "proxy:iplist5"
 redis_url_key = "dpc_maijiawang:url_list"
-cookies = "encentSig=3598261248; Hm_lvt_8c619410770b1c3446a04be9cfb938f7=1490604155,1490605167,1490663171,1490666286; _qddaz=QD.kq926r.pqmz8c.j0sud4s5; Hm_lpvt_8c619410770b1c3446a04be9cfb938f7=1490750407; _qddab=3-x88bfb.j0uaaqek; auth=ed3fcddf4f617e24fc99d8c94d3ab9742039210e; __nick=1; mjcc=e3ea0b817e4d2bdcad3fb82d6654838e38c9681b; _qdda=3-1.1; _qddamta_800098528=3-0"
+cookies = "tencentSig=3598261248; Hm_lvt_8c619410770b1c3446a04be9cfb938f7=1490922815,1490926767,1490927771,1491009298; _qddaz=QD.kq926r.pqmz8c.j0sud4s5; __nick=1; Hm_lpvt_8c619410770b1c3446a04be9cfb938f7=1491009302; _qdda=3-1.1; _qddab=3-x6phnn.j0ykftj4; _qddamta_800098528=3-0; mjcc=75ccf8cb5ef627942979d342dc55f56a93b06bca; auth=75313f2ddd152373393fecb65d4816234f5cbfeb"
 # try:
 #     r_cookies = open("cookies.txt", "r")  # 读取配置cookies
 #     if r_cookies:
@@ -73,8 +72,9 @@ def search(cid, savedfilename):
         openurl.proxies = {'http': 'http://' + proxiip, 'https': 'https://' + proxiip}
         url = "http://www.maijia.com/data/industry/hotitems/list?cid={0}&brand=&type=B&date=&pageNo={1}&pageSize=60&orderType=desc".format(cid, intPage)
         try:
+            time.sleep(1)
             print "第 %s 页 : %s" % (intPage, url)
-            req = openurl.get(url, headers=headers, timeout=10)
+            req = openurl.get(url, headers=headers, timeout=20)
             intPage += 1
             if req:
                 data = json.loads(req.text)
@@ -128,7 +128,7 @@ def beginwork():
         url_l = rconnection_test.lrange(redis_url_key, 0, -1)
         if len(url_l) > 0:
             threads = []
-            threadcount = 7
+            threadcount = 10
             for ai in range(threadcount):
                 threads.append(threading.Thread(target=run, args=()))
             for tx in threads:
