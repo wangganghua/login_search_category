@@ -23,16 +23,19 @@
       <file leaf-file-name="dpcsearch_maijiawang.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spider/dpcsearch_maijiawang.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="69" column="42" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
+            <state relative-caret-position="391">
+              <caret line="334" column="0" selection-start-line="334" selection-start-column="0" selection-end-line="334" selection-end-column="0" />
               <folding>
-                <element signature="e#42#57#0" expanded="true" />
-                <element signature="e#1072#1078#0" expanded="false" />
-                <element signature="e#1550#1650#0" expanded="false" />
-                <element signature="e#4393#4643#0" expanded="false" />
-                <element signature="e#4667#5167#0" expanded="false" />
-                <element signature="e#5187#6706#0" expanded="false" />
-                <element signature="e#6726#8042#0" expanded="false" />
+                <element signature="e#371#427#0" expanded="false" />
+                <element signature="e#789#1160#0" expanded="false" />
+                <element signature="e#1205#4588#0" expanded="false" />
+                <element signature="e#4878#5150#0" expanded="false" />
+                <element signature="e#5178#5682#0" expanded="false" />
+                <element signature="e#5713#6556#0" expanded="false" />
+                <element signature="e#6580#7677#0" expanded="false" />
+                <element signature="e#7697#8995#0" expanded="false" />
+                <element signature="e#9023#9524#0" expanded="false" />
+                <marker date="1492138851232" expanded="false" signature="4605:4860" ph="..." />
               </folding>
             </state>
           </provider>
@@ -47,9 +50,17 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="F:/AVCSearchProduct/spider/testfile.py" />
+        <option value="F:/AVCSearchCategory/spider/testfile.py" />
+        <option value="F:/AVCSearchProduct/spider/write_csvfile.py" />
+        <option value="D:/installPython2.7/Lib/site-packages/redis-2.10.5-py2.7.egg!/redis/__init__.py" />
+        <option value="F:/AVCSearchCategory/spider/picture_demo.py" />
         <option value="$PROJECT_DIR$/spider/cookies.txt" />
         <option value="$PROJECT_DIR$/spider/dpcsearch_maijiawang.py" />
       </list>
@@ -61,7 +72,7 @@
     <option name="width" value="1616" />
     <option name="height" value="876" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -86,7 +97,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -111,13 +121,14 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/pyui4win" />
   </component>
   <component name="RunManager" selected="Python.dpcsearch_maijiawang">
     <configuration default="false" name="dpcsearch_maijiawang" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -133,6 +144,40 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="DpcMaijiawang" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spider/dpcsearch_maijiawang.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="write_csvfile" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="F:/AVCSearchProduct/spider" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="AVCSearchProduct" />
+      <option name="SCRIPT_NAME" value="F:/AVCSearchProduct/spider/write_csvfile.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="testfile" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="F:/AVCSearchCategory/spider" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="AVCSearchCategory" />
+      <option name="SCRIPT_NAME" value="F:/AVCSearchCategory/spider/testfile.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -271,12 +316,16 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.dpcsearch_maijiawang" />
+      <item index="1" class="java.lang.String" itemvalue="Python.write_csvfile" />
+      <item index="2" class="java.lang.String" itemvalue="Python.testfile" />
     </list>
     <recent_temporary>
-      <list size="1">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Python.dpcsearch_maijiawang" />
+        <item index="1" class="java.lang.String" itemvalue="Python.write_csvfile" />
+        <item index="2" class="java.lang.String" itemvalue="Python.testfile" />
       </list>
     </recent_temporary>
   </component>
@@ -295,24 +344,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16327827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825485" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53360766" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921812" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39917696" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5512465" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921812" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -329,9 +378,21 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="19" />
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://F:/AVCSearchProduct/spider/write_csvfile.py</url>
+          <line>164</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="34" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="for i in enumerate(cj)" language="Python" />
+        <watch expression="req.text" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/spider/dpcsearch_maijiawang.py">
@@ -339,13 +400,72 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#42#57#0" expanded="true" />
-            <element signature="e#1072#1078#0" expanded="false" />
-            <element signature="e#1550#1650#0" expanded="false" />
-            <element signature="e#4393#4643#0" expanded="false" />
-            <element signature="e#4667#5167#0" expanded="false" />
-            <element signature="e#5187#6706#0" expanded="false" />
-            <element signature="e#6726#8042#0" expanded="false" />
+            <element signature="e#371#427#0" expanded="false" />
+            <element signature="e#789#1160#0" expanded="false" />
+            <element signature="e#1205#4588#0" expanded="false" />
+            <element signature="e#4878#5150#0" expanded="false" />
+            <element signature="e#5178#5682#0" expanded="false" />
+            <element signature="e#5713#6556#0" expanded="false" />
+            <element signature="e#6580#7677#0" expanded="false" />
+            <element signature="e#7697#8995#0" expanded="false" />
+            <element signature="e#9023#9524#0" expanded="false" />
+            <marker date="1492138851232" expanded="false" signature="4605:4860" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/dpcsearch_maijiawang.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding>
+            <element signature="e#371#427#0" expanded="false" />
+            <element signature="e#789#1160#0" expanded="false" />
+            <element signature="e#1205#4588#0" expanded="false" />
+            <element signature="e#4878#5150#0" expanded="false" />
+            <element signature="e#5178#5682#0" expanded="false" />
+            <element signature="e#5713#6556#0" expanded="false" />
+            <element signature="e#6580#7677#0" expanded="false" />
+            <element signature="e#7697#8995#0" expanded="false" />
+            <element signature="e#9023#9524#0" expanded="false" />
+            <marker date="1492138851232" expanded="false" signature="4605:4860" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchCategory/spider/testfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+          <folding>
+            <element signature="e#613#1717#0" expanded="false" />
+            <element signature="e#1738#1912#0" expanded="false" />
+            <element signature="e#1931#2104#0" expanded="false" />
+            <element signature="e#2124#2188#0" expanded="false" />
+            <element signature="e#2215#2402#0" expanded="false" />
+            <element signature="e#2467#2651#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchCategory/spider/picture_demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchProduct/spider/write_csvfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="170" column="38" selection-start-line="170" selection-start-column="38" selection-end-line="170" selection-end-column="38" />
+          <folding>
+            <element signature="e#943#1963#0" expanded="false" />
+            <element signature="e#1985#3247#0" expanded="false" />
+            <element signature="e#3279#4223#0" expanded="false" />
+            <element signature="e#4256#5310#0" expanded="false" />
+            <element signature="e#5327#5598#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -355,21 +475,55 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#42#57#0" expanded="true" />
-            <element signature="e#1072#1078#0" expanded="false" />
-            <element signature="e#1550#1650#0" expanded="false" />
-            <element signature="e#4393#4643#0" expanded="false" />
-            <element signature="e#4667#5167#0" expanded="false" />
-            <element signature="e#5187#6706#0" expanded="false" />
-            <element signature="e#6726#8042#0" expanded="false" />
+            <element signature="e#371#427#0" expanded="false" />
+            <element signature="e#789#1160#0" expanded="false" />
+            <element signature="e#1205#4588#0" expanded="false" />
+            <element signature="e#4878#5150#0" expanded="false" />
+            <element signature="e#5178#5682#0" expanded="false" />
+            <element signature="e#5713#6556#0" expanded="false" />
+            <element signature="e#6580#7677#0" expanded="false" />
+            <element signature="e#7697#8995#0" expanded="false" />
+            <element signature="e#9023#9524#0" expanded="false" />
+            <marker date="1492138851232" expanded="false" signature="4605:4860" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spider/cookies.txt">
+    <entry file="file://$PROJECT_DIR$/spider/dpcsearch_maijiawang.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#371#427#0" expanded="false" />
+            <element signature="e#789#1160#0" expanded="false" />
+            <element signature="e#1205#4588#0" expanded="false" />
+            <element signature="e#4878#5150#0" expanded="false" />
+            <element signature="e#5178#5682#0" expanded="false" />
+            <element signature="e#5713#6556#0" expanded="false" />
+            <element signature="e#6580#7677#0" expanded="false" />
+            <element signature="e#7697#8995#0" expanded="false" />
+            <element signature="e#9023#9524#0" expanded="false" />
+            <marker date="1492138851232" expanded="false" signature="4605:4860" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/dpcsearch_maijiawang.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#371#427#0" expanded="false" />
+            <element signature="e#789#1160#0" expanded="false" />
+            <element signature="e#1205#4588#0" expanded="false" />
+            <element signature="e#4878#5150#0" expanded="false" />
+            <element signature="e#5178#5682#0" expanded="false" />
+            <element signature="e#5713#6556#0" expanded="false" />
+            <element signature="e#6580#7677#0" expanded="false" />
+            <element signature="e#7697#8995#0" expanded="false" />
+            <element signature="e#9023#9524#0" expanded="false" />
+            <marker date="1492138851232" expanded="false" signature="4605:4860" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -392,7 +546,162 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spider/tesseract.log" />
+    <entry file="file://$PROJECT_DIR$/spider/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="80" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/NOTICE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/fnord.tif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spider/errors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/AUTHORS">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/ChangeLog">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/ConnectionKafKaForPython/selectKafKaFile/connectionsqlserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/ConnectionKafKaForPython/selectKafKaFile/saveerrorlogs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchProduct/spider/read_category_url.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2977">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchProduct/spider/connectionsqlserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-475">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchCategory/spider/avcsearchcategory_tm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-577">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#1424#6252#0" expanded="false" />
+            <element signature="e#6295#9331#0" expanded="false" />
+            <element signature="e#9376#12049#0" expanded="false" />
+            <element signature="e#12095#15240#0" expanded="false" />
+            <element signature="e#15258#15999#0" expanded="false" />
+            <element signature="e#16018#16195#0" expanded="false" />
+            <element signature="e#16208#17518#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchCategory/spider/avcsearchcategory_ct.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchProduct/spider/avcsearchcategory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-577">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchProduct/spider/url_testtxd_csvfile.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="2626" column="0" selection-start-line="64" selection-start-column="28" selection-end-line="2626" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchProduct/spider/AvcSerachProductData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="182" column="84" selection-start-line="182" selection-start-column="51" selection-end-line="182" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchProduct/spider/read_tm_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-123">
+          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchProduct/spider/testfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="74" column="15" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchProduct/spider/read_phone_url.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="157" column="10" selection-start-line="157" selection-start-column="10" selection-end-line="157" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchProduct/spider/write_csvfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="170" column="38" selection-start-line="170" selection-start-column="38" selection-end-line="170" selection-end-column="38" />
+          <folding>
+            <element signature="e#943#1963#0" expanded="false" />
+            <element signature="e#1985#3247#0" expanded="false" />
+            <element signature="e#3279#4223#0" expanded="false" />
+            <element signature="e#4256#5310#0" expanded="false" />
+            <element signature="e#5327#5598#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/installPython2.7/Lib/site-packages/requests/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -400,44 +709,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spider/tesseract.log">
+    <entry file="file://D:/installPython2.7/Lib/json/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/installPython2.7/Lib/site-packages/xlwt/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#53#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/installPython2.7/Lib/site-packages/redis-2.10.5-py2.7.egg!/redis/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spider/util.py">
+    <entry file="file://D:/installPython2.7/Lib/urllib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="80" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="80" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/installPython2.7/Lib/site-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchCategory/spider/picture_demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchCategory/spider/testfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#613#1717#0" expanded="false" />
+            <element signature="e#1738#1912#0" expanded="false" />
+            <element signature="e#1931#2104#0" expanded="false" />
+            <element signature="e#2124#2188#0" expanded="false" />
+            <element signature="e#2215#2402#0" expanded="false" />
+            <element signature="e#2467#2651#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AVCSearchCategory/spider/picture_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spider/pytesser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
-          <folding>
-            <element signature="e#136#148#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/cookies4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/cookies3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/cookies.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/wdkd.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/dataurl.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1042">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spider/dpcsearch_maijiawang.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="69" column="42" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
+        <state relative-caret-position="391">
+          <caret line="334" column="0" selection-start-line="334" selection-start-column="0" selection-end-line="334" selection-end-column="0" />
           <folding>
-            <element signature="e#42#57#0" expanded="true" />
-            <element signature="e#1072#1078#0" expanded="false" />
-            <element signature="e#1550#1650#0" expanded="false" />
-            <element signature="e#4393#4643#0" expanded="false" />
-            <element signature="e#4667#5167#0" expanded="false" />
-            <element signature="e#5187#6706#0" expanded="false" />
-            <element signature="e#6726#8042#0" expanded="false" />
+            <element signature="e#371#427#0" expanded="false" />
+            <element signature="e#789#1160#0" expanded="false" />
+            <element signature="e#1205#4588#0" expanded="false" />
+            <element signature="e#4878#5150#0" expanded="false" />
+            <element signature="e#5178#5682#0" expanded="false" />
+            <element signature="e#5713#6556#0" expanded="false" />
+            <element signature="e#6580#7677#0" expanded="false" />
+            <element signature="e#7697#8995#0" expanded="false" />
+            <element signature="e#9023#9524#0" expanded="false" />
+            <marker date="1492138851232" expanded="false" signature="4605:4860" ph="..." />
           </folding>
         </state>
       </provider>

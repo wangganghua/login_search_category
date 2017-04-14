@@ -1,6 +1,3 @@
-(无列名)18053276660
-xiaoxin123
-117.122.192.50, 6479
 {"category": "净水器","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=350504&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "电烤箱","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50002894&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "微波炉","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50002809&pcid=4&brand=&type=B&date=&pageNo=1"}
@@ -45,6 +42,7 @@ xiaoxin123
 {"category": "榨汁机","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50018218&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "电磁炉","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=350502&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "电烤炉","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50008366&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "智能手机","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=1512&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "料理机","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50012097&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "电水壶","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50003695&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "电蒸锅","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50013010&pcid=4&brand=&type=B&date=&pageNo=1"}
@@ -52,3 +50,5 @@ xiaoxin123
 {"category": "电压力锅","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50013009&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "电饭煲","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50013008&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "电蒸炉","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50016465&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "养生壶","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50005929&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "投影仪","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=111219&pcid=4&brand=&type=B&date=&pageNo=1"}

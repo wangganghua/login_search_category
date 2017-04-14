@@ -27,15 +27,27 @@ rconnection_test = redis.Redis(host='192.168.2.245', port=6379, db=0)
 # 代理ip
 redis_key_proxy = "proxy:iplist5"
 redis_url_key = "dpc_maijiawang:url_list"
-cookies = "tencentSig=3598261248; Hm_lvt_8c619410770b1c3446a04be9cfb938f7=1490922815,1490926767,1490927771,1491009298; _qddaz=QD.kq926r.pqmz8c.j0sud4s5; __nick=1; Hm_lpvt_8c619410770b1c3446a04be9cfb938f7=1491009302; _qdda=3-1.1; _qddab=3-x6phnn.j0ykftj4; _qddamta_800098528=3-0; mjcc=75ccf8cb5ef627942979d342dc55f56a93b06bca; auth=75313f2ddd152373393fecb65d4816234f5cbfeb"
-# try:
-#     r_cookies = open("cookies.txt", "r")  # 读取配置cookies
-#     if r_cookies:
-#         ctxt = r_cookies.read()
-#         cookvalue = json.loads(ctxt)
-#         cookies = cookvalue["Cookie"]
-# except Exception, e:
-#     print "cookie error: %s " % e
+
+cookies = "auth=5b21f3cclksjfldjflaskjflfaadc716994841b4aa29415a8d0"
+
+# 加载cookie
+
+
+def loadcookie():
+    try:
+        r_cookies = open("cookies.txt", "r")  # 读取配置cookies
+        if r_cookies:
+            ctxt = r_cookies.read()
+            cookvalue = json.loads(ctxt)
+            cookies = cookvalue["Cookie"]
+            r_cookies.close()
+            return cookies
+    except Exception, e:
+        print "cookie error: %s " % e
+        r_cookies.close()
+        return ""
+
+# 开始采集
 
 
 def search(cid, savedfilename):
@@ -47,10 +59,6 @@ def search(cid, savedfilename):
         cdend = (datetime.now().strftime("%Y%m%d") + "\\" + "天猫商城").encode("gbk")
         os.makedirs(cdend)
 
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0",
-        "Cookie": cookies
-    }
     tm_url ="http://detail.tmall.com/item.htm?id={0}&amp;areaid=&amp;"
     openurl = requests.session()
     # excel 标题
@@ -65,6 +73,11 @@ def search(cid, savedfilename):
     index = 1
     intPage = 1
     while isTrue:
+        cookies = loadcookie()
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0",
+            "Cookie": cookies
+        }
         # 随机获取代理ip
         proxy = rconnection_yz.srandmember(redis_key_proxy)
         proxyjson = json.loads(proxy)
@@ -74,10 +87,16 @@ def search(cid, savedfilename):
         try:
             time.sleep(1)
             print "第 %s 页 : %s" % (intPage, url)
-            req = openurl.get(url, headers=headers, timeout=20)
+            req = openurl.get(url, headers=headers, timeout=15)
             intPage += 1
             if req:
                 data = json.loads(req.text)
+                try:
+                    print data["message"]
+                    if "重新登录" in data["message"]:
+                        login() # 重新登陆获取新的cookie
+                except Exception, e:
+                    pass
                 if data["result"] == 501:
                     print "等待10s"
                     time.sleep(10)
@@ -91,7 +110,10 @@ def search(cid, savedfilename):
                 for i in wj:
                     baobei = i["title"]
                     lianjie = tm_url.format(i["id"])
-                    zhanggui = i["sellerNick"]
+                    try:
+                        zhanggui = i["sellerNick"]
+                    except Exception,e:
+                        zhanggui = ""
                     xinyong = "天猫"
                     biaojia = i["oriPrice"]
                     chengjiaojia = i["price"]
@@ -110,10 +132,9 @@ def search(cid, savedfilename):
             print "errormessage : %s" % e
             if intPage > 1:
                 intPage -= 1
-            # time.sleep(10)
 
 
-def run():
+def run_old():
     url_list = rconnection_test.lpop(redis_url_key)
     if url_list:
         value = json.loads(url_list)
@@ -123,14 +144,25 @@ def run():
         print "读取url结束,等待1分钟"
 
 
-def beginwork():
+def run():
+    global urldata
+    if urldata:
+        url_list = str(urldata.pop()).decode("gbk")
+        value = json.loads(url_list)
+        regeid = re.search("(?<=\?cid=)\d+", value["url"])
+        search(regeid.group(), value["category"])
+    else:
+        print "读取txt url结束,等待1分钟"
+
+
+def beginwork_old():
     while True:
         url_l = rconnection_test.lrange(redis_url_key, 0, -1)
         if len(url_l) > 0:
             threads = []
-            threadcount = 10
+            threadcount = 4
             for ai in range(threadcount):
-                threads.append(threading.Thread(target=run, args=()))
+                threads.append(threading.Thread(target=run_old, args=()))
             for tx in threads:
                 tx.start()
             for tx in threads:
@@ -141,59 +173,78 @@ def beginwork():
             time.sleep(60)
 
 
+def beginwork(istrue):
+     global urldata
+     urldata = []
+     if istrue:
+         w_url = open("dataurl.txt")
+         if w_url:
+             urldata = w_url.readlines()
+         w_url.close()
+     else:
+         print "select all--------------------------------------------------------------"
+         urldata = selectall()
+     isTrue = True
+     while isTrue:
+         if len(urldata) > 0:
+             threads = []
+             threadcount = 10
+             for ai in range(threadcount):
+                 threads.append(threading.Thread(target=run, args=()))
+             for tx in threads:
+                 tx.start()
+             for tx in threads:
+                 tx.join()
+             print "end thread : %s" % datetime.now()
+             isTrue = True
+         else:
+             print "等txt待1分钟"
+             isTrue = False
+             # time.sleep(60)
+
+# 登陆
+
+
 def login():
-    login_url = "https://login.maijia.com"
-    post_url = "https://login.maijia.com/user/login?redirectURL="
-    data = urllib.urlencode({"loginCode": "18053276660", "loginPassword": "xiaoxin123"})
-
-    getUrl = login_url
-    print getUrl
-
-    url = "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50016465&pcid=4&brand=&type=B&date=&pageNo=1"
+    print "重新登陆获取cookie"
+    post_url = "https://login.maijia.com/user/login?style=login_index&redirectURL=https%3A%2F%2Flogin.maijia.com%2Flogin%2Fforward.htm%3FredirectURL%3Dhttp%253A%252F%252Fwww.maijia.com%252F"
+    post_data = urllib.urlencode({
+        "loginCode": "18053276660",
+        "loginPassword": "xiaoxin123"
+    })
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0",
+        "Referer": "http://www.maijia.com/"
+    }
     try:
-        # request = urllib2.Request(getUrl, headers=headers)
-        # response = urllib2.urlopen(url)
-        # print response.read()
-
         cj = cookielib.LWPCookieJar()
         cookie_support = urllib2.HTTPCookieProcessor(cj)
         opener = urllib2.build_opener(cookie_support, urllib2.HTTPHandler)
         urllib2.install_opener(opener)
+        requestx = urllib2.Request(post_url, post_data, headers=headers)
+        urllib2.urlopen(requestx)
+        print str(cj).split(' ')[1]
+        wrcookie = '{"Cookie":"%s"}' % str(cj).split(' ')[1]
+        print wrcookie
+        fwritecookie = open("cookies.txt", "w")
+        fwritecookie.writelines(wrcookie)
+        fwritecookie.close()
 
-        h = urllib2.urlopen(login_url)
-        headers = {
-            "User-Agent":"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0",
-            "Referer":"http://www.maijia.com/"
-        }
-        rquest = urllib2.Request(post_url, data, headers)
-        print rquest
-        response = urllib2.urlopen(rquest)
-        txt = response.read()
-        print txt
-
-
-        #     cj = cookielib.CookieJar()
-    #     openner = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
-    #     print openner
-    #     openner.addheaders=[('User-agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0')]
-    #     openner.open(login_url, data)
-    #     op = openner.open(url)
-    #     txt = op.read()
-    #     print txt
     except Exception, e:
         print e
 
 
 def image():
-    images = Image.open("1.png")
+    images = Image.open("a.jpg")
     enhancer = ImageEnhance.Contrast(images)
+
     im = enhancer.enhance(2)
     images1 = im.convert("1")
     data = images1.getdata()
     w, h = images1.size
     print images1.size
     block_point = 0
-    for x in xrange(1,w-1):
+    for x in xrange(1, w-1):
         for y in xrange(1, h-1):
             mid_pixel = data[w*y + x]   # 中央像素点 值
             if mid_pixel == 0:  # 找寻上、下、左、右四个方位的像素值
@@ -214,19 +265,78 @@ def image():
                     images1.putpixel((x, y), 0)
                 block_point = 0
 
-    images1.show()
-    # threshold = 140
-    # table = []
-    # for i in range(256):
-    #     if i < threshold:
-    #         table.append(0)
-    #     else:
-    #         table.append(1)
-    # out = images1.point(table, "1")
-    # out.show()
-    # txt = image_to_string(out)
-    # print txt
+    # images1.show()
+    threshold = 140
+    table = []
+    for i in range(256):
+        if i < threshold:
+            table.append(0)
+        else:
+            table.append(1)
+    out = images1.point(table, "1")
+    out.show()
+    txt = image_to_string(out)
+    print txt
 
+
+def openbeginwork():
+    while True:
+        str_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        print str_time
+        # if "08:30:00" in str_time:
+        if "08:10:00" in str_time:
+            print datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            beginwork(True)
+            print "end "
+            select = selectall()
+            if len(select) > 0:
+                beginwork(False)
+            print datetime.now()
+            time.sleep(1)
+        else:
+            time.sleep(1)
+            pass
+# 查找是否漏采集
+
+
+def selectall():
+    #  查找文件个数
+    #   标准的品类list
+    correctly_category = []
+    #   采集文件品类list
+    file_category = []
+    #   保存原始的品类数据
+    correctly_info_category = []
+    path = "E:\\DpcMaijiawang\\spider\\"+datetime.now().strftime("%Y%m%d")+"\\天猫商城".encode("gbk")
+    for i in os.walk(path):
+        for ix in i[2]:
+            file_category.append(ix.decode("gbk").replace("_最近7天.xls", ""))
+    #   读取txt文件的品类
+    w_url = open("dataurl.txt")
+    if w_url:
+        correctly_info_category = w_url.readlines()
+    w_url.close()
+    for i in correctly_info_category:
+        jscategory = json.loads(str(i).decode("gbk"))
+        correctly_category.append(jscategory["category"])
+    # 求list 差集
+    list_difference = list(set(correctly_category).difference(set(file_category)))
+    list_differences = []
+    for i in list_difference:
+        for a in correctly_info_category:
+            if i in str(a).decode("gbk"):
+                # print str(a).decode("gbk")
+                list_differences.append(str(a))
+    # 清除
+    correctly_category = []
+    file_category = []
+    correctly_info_category = []
+    return list_differences
+
+openbeginwork()
 # login()
-beginwork()
+# beginwork_old()
+# openbeginwork()
 # image()
+# run()
+
