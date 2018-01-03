@@ -4,7 +4,6 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="AVCSearchProduct" />
     <orderEntry type="module" module-name="AVCSearchCategory" />
   </component>
   <component name="TestRunnerService">

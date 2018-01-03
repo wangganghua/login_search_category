@@ -1,0 +1,7 @@
+{"category": "µçÄÔ¶àÃ½ÌåÒôÏä","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50001810pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "HIfiÒôÏä","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=121703&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "À­¸Ë¹ã³¡ÒôÏä»§ÍâÒôÏì","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50012934&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "ktv¿¨À­OKÒôÏä","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50008106&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "»ØÒô±ÚÒôÏì","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=121988001&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "×ÀÃæÒôÏìÒôÏä","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=124208014&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "ÖÇÄÜÒôÏä","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=126412033&pcid=4&brand=&type=B&date=&pageNo=1"}

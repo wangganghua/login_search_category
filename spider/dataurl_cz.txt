@@ -1,0 +1,6 @@
+{"category": "电源插座","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50013403&pcid=7&brand=&type=B&date=&pageNo=1"}
+{"category": "接线板","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=350615&pcid=7&brand=&type=B&date=&pageNo=1"}
+{"category": "开关插座套餐","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50020591&pcid=7&brand=&type=B&date=&pageNo=1"}
+{"category": "地插","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50020595&pcid=7&brand=&type=B&date=&pageNo=1"}
+{"category": "转换插头","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50003472&pcid=7&brand=&type=B&date=&pageNo=1"}
+{"category": "插头","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50013407&pcid=7&brand=&type=B&date=&pageNo=1"}

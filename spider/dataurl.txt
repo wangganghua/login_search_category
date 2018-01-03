@@ -1,3 +1,7 @@
+{"category": "彩电","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50019790&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "洗衣机","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=350301&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "冰箱","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50003881&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "电热水器","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50013475&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "净水器","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=350504&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "电烤箱","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50002894&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "微波炉","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50002809&pcid=4&brand=&type=B&date=&pageNo=1"}
@@ -10,10 +14,6 @@
 {"category": "嵌入式电烤箱","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=124472005&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "嵌入式电蒸箱","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=124478013&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "嵌入式微波炉","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=124480015&pcid=4&brand=&type=B&date=&pageNo=1"}
-{"category": "彩电","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50019790&pcid=4&brand=&type=B&date=&pageNo=1"}
-{"category": "洗衣机","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=350301&pcid=4&brand=&type=B&date=&pageNo=1"}
-{"category": "冰箱","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50003881&pcid=4&brand=&type=B&date=&pageNo=1"}
-{"category": "电热水器","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50013475&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "燃气热水器","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50013497&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "空调","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=350401&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "冷柜","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50015560&pcid=4&brand=&type=B&date=&pageNo=1"}
@@ -33,7 +33,7 @@
 {"category": "挂烫机","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50013195&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "吸尘器","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50008554&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "扫地机器人","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50008555&pcid=4&brand=&type=B&date=&pageNo=1"}
-{"category": "面包机","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50018103&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "面包加工机","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50018103&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "电陶炉","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50015397&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "原汁机","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=124212007&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "煎烤机","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50004363&pcid=4&brand=&type=B&date=&pageNo=1"}
@@ -42,7 +42,6 @@
 {"category": "榨汁机","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50018218&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "电磁炉","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=350502&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "电烤炉","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50008366&pcid=4&brand=&type=B&date=&pageNo=1"}
-{"category": "智能手机","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=1512&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "料理机","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50012097&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "电水壶","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50003695&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "电蒸锅","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50013010&pcid=4&brand=&type=B&date=&pageNo=1"}
@@ -52,3 +51,11 @@
 {"category": "电蒸炉","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50016465&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "养生壶","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50005929&pcid=4&brand=&type=B&date=&pageNo=1"}
 {"category": "投影仪","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=111219&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "智能手机","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=1512&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "电脑多媒体音箱","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50001810pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "HIfi音箱","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=121703&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "拉杆广场音箱户外音响","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50012934&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "ktv卡拉OK音箱","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=50008106&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "回音壁音响","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=121988001&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "桌面音响音箱","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=124208014&pcid=4&brand=&type=B&date=&pageNo=1"}
+{"category": "智能音箱","url": "http://www.maijia.com/industry/index.html#/data/hotitems/?cid=126412033&pcid=4&brand=&type=B&date=&pageNo=1"}

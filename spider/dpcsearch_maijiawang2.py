@@ -1,4 +1,4 @@
-﻿#!/usr/bin/python
+#!/usr/bin/python
 # -*- coding:utf-8 -*-
 
 import requests
@@ -25,30 +25,23 @@ if sys.getdefaultencoding() != default_encoding:
 # 亦庄
 # rconnection_yz = redis.Redis(host='117.122.192.50', port=6479, db=0)
 # 西安
-rconnection_yz = redis.Redis(host='117.23.4.139', port=15480, db=0)
-# rconnection_yz = redis.Redis(host='192.168.2.245', port=6379, db=0)
+# rconnection_yz = redis.Redis(host='117.23.4.139', port=15480, db=0)
+rconnection_yz = redis.Redis(host='192.168.2.245', port=6379, db=0)
 rconnection_test = redis.Redis(host='192.168.2.245', port=6379, db=0)
 # 代理ip
-redis_key_proxy = "proxy:iplist"
+redis_key_proxy = "proxy123:iplist"
 redis_url_key = "dpc_maijiawang:url_list"
-user = "avcspider"
-pwd = "aowei123"
-
+# user = "avcspider"
+# pwd = "aowei123"
 
 cookies = "auth=5b21f3cclksjfldjflaskjflfaadc716994841b4aa29415a8d0"
-plDict={'燃气热水器':'热水器','电热水器':'热水器','即热热水器':'热水器','燃热':'热水器','太阳能热水器':'热水器','空气能热水器':'热水器',
-        '嵌入式电烤箱':'电烤箱','嵌入式烤箱':'电烤箱','嵌入式电蒸箱':'电蒸箱','嵌入式蒸箱':'电蒸箱','嵌入式微波炉':'微波炉','酒柜':'冰柜','冷柜':'冰柜'
-         ,'烟灶消套餐':'厨电套餐', '烟灶消套装':'厨电套餐','电陶炉':'电磁炉','吊扇':'电风扇','空调扇':'电风扇','电炖锅':'电蒸炖锅','电蒸锅':'电蒸炖锅'
-        ,'电蒸炉':'电蒸箱','电烤炉':'煎烤机' ,'挂烫机':'电熨斗','榨汁机':'食品料理机','原汁机':'食品料理机','料理机':'食品料理机','扫地机器人':'吸尘器',
- }
-# ----------------------------------------------采集 近7天数据-----------------------------------------------------------
+
+
 # 加载cookie
 def loadcookie(category):
     try:
         if "智能手机" in category or "投影仪" in category:
             r_cookies = open("cookies_sj.txt", "r")  # 读取配置cookies
-        # elif "音箱" in category or "音响" in category:
-        #     r_cookies = open("cookies_yx.txt", "r")
         else:
             r_cookies = open("cookies.txt", "r")  # 读取配置cookies
         if r_cookies:
@@ -97,14 +90,14 @@ def search(cid, savedfilename):
         proxy = rconnection_yz.srandmember(redis_key_proxy)
         proxyjson = json.loads(proxy)
         proxiip = proxyjson["ip"]
-        # openurl.proxies = {'http': 'http://' + proxiip, 'https': 'https://' + proxiip}
+        openurl.proxies = {'http': 'http://' + proxiip, 'https': 'https://' + proxiip}
         # 若你的代理需要使用HTTP Basic Auth，可以使用 http: // user:password @ host / 语法：eg： "http": "http://user:pass@10.10.1.10:3128/",
-        openurl.proxies = {'http': 'http://'+user+':'+pwd+'@' + proxiip+'/', 'https': 'https://'+user+':'+pwd+'@' + proxiip+'/'}
+        # openurl.proxies = {'http': 'http://'+user+':'+pwd+'@' + proxiip+'/', 'https': 'https://'+user+':'+pwd+'@' + proxiip+'/'}
         url = "http://www.maijia.com/data/industry/hotitems/list?cid={0}&brand=&type=B&date=&pageNo={1}&pageSize=60&orderType=desc".format(cid, intPage)
         try:
             time.sleep(1)
             print "第 %s 页 : %s" % (intPage, url)
-            time.sleep(0.5)
+            time.sleep(2)
             req = openurl.get(url, headers=headers, timeout=25)
             intPage += 1
             if req:
@@ -129,7 +122,6 @@ def search(cid, savedfilename):
                 for i in wj:
                     baobei = i["title"]
                     lianjie = tm_url.format(i["id"])
-
                     try:
                         zhanggui = i["sellerNick"]
                     except Exception,e:
@@ -147,25 +139,14 @@ def search(cid, savedfilename):
                     sheet.write(index, 5, chengjiaojia)
                     sheet.write(index, 6, xiaoliang)
                     sheet.write(index, 7, xiaoe)
-                    #存入redis
-                    try:
-                        cateroy=plDict[str(savedfilename).encode('utf-8')]
-                    except Exception,e:
-                        cateroy=savedfilename
-                    try:
-                        str_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                        result={"url": lianjie ,"cateroy":cateroy , "spshop": zhanggui , "ec":  "天猫商城","writetime":str_time}
-                        resultjson = json.dumps(result, encoding='UTF-8', ensure_ascii=False)
-                        # 天猫URL存储位置
-                        redis_ServerTM = redis.Redis(host='117.23.4.139', port=15480, db=0)
-                        redis_key_tmurllist = "DPCmaijiawangtmurl:item"
-                        redis_ServerTM.lpush(redis_key_tmurllist,resultjson)
-                    except Exception, e:
-                        print 'insert redis faild %s'%e.message
                     index += 1
             openurl.keep_alive = False
         except Exception, e:
             print "errormessage : %s" % e
+            # # 删除无效的 ip
+            if "timeout" not in e:
+                rx = rconnection_yz.srem(redis_key_proxy, proxy)
+            #     print rx
             if intPage > 1:
                 intPage -= 1
                 time.sleep(1)
@@ -211,16 +192,17 @@ def beginwork(istrue):
              isTrue = False
              # time.sleep(60)
 
-
 # 登陆
+
+
 def login(category):
     print "重新登陆获取cookie"
     post_url = "https://login.maijia.com/user/login?style=login_index&redirectURL=https%3A%2F%2Flogin.maijia.com%2Flogin%2Fforward.htm%3FredirectURL%3Dhttp%253A%252F%252Fwww.maijia.com%252F"
     post_data = urllib.urlencode({
-        "loginCode": "18053276660",
-        "loginPassword": "xiaoxin123"
-        # "loginCode": "13716810221",
-        # "loginPassword": "19890305hua"
+        # "loginCode": "18053276660",
+        # "loginPassword": "xiaoxin123"
+        "loginCode": "13716810221",
+        "loginPassword": "19890305hua"
     })
     if "智能手机" in category or "投影仪" in category:
         post_data = urllib.urlencode({
@@ -235,7 +217,8 @@ def login(category):
     proxyjson = json.loads(proxy)
     proxiip = proxyjson["ip"]
     try:
-        proxy_support = urllib2.ProxyHandler({"http": "http://"+user+":"+pwd+"@%s" % proxiip})
+        # proxy_support = urllib2.ProxyHandler({"http": "http://"+user+":"+pwd+"@%s" % proxiip})
+        proxy_support = urllib2.ProxyHandler({"http": "http://%s" % proxiip})
         cj = cookielib.LWPCookieJar()
         cookie_support = urllib2.HTTPCookieProcessor(cj)
         opener = urllib2.build_opener(cookie_support, proxy_support)
@@ -255,6 +238,8 @@ def login(category):
             fwritecookie.close()
 
     except Exception, e:
+        # rx = rconnection_yz.srem(redis_key_proxy, proxy)
+        # print rx
         print e
 
 
@@ -320,9 +305,9 @@ def openbeginwork():
                 time.sleep(1)
             else:
                 print u"周末下午采集"
-                # select = selectall()
-                # if len(select) > 0:
-                #     beginwork(False)
+                select = selectall()
+                if len(select) > 0:
+                    beginwork(False)
                 time.sleep(1)
         else:   # 正常时间 为 9：05点开始采集
             if "08:38:00" in str_time:
@@ -335,9 +320,9 @@ def openbeginwork():
                 print datetime.now()
                 time.sleep(1)
             else:
-                # select = selectall()
-                # if len(select) > 0:
-                #     beginwork(False)
+                select = selectall()
+                if len(select) > 0:
+                    beginwork(False)
                 print "spider mai jia wang"
                 time.sleep(1)
 
@@ -355,16 +340,13 @@ def selectall():
     path = os.path.abspath(".") + "\\" + datetime.now().strftime("%Y%m%d") + "\\天猫商城".encode("gbk")
     for i in os.walk(path):
         for ix in i[2]:
-            print ix
-            # file_category.append(ix.decode("gbk").replace("_最近7天.xls", ""))
-            file_category.append(ix.decode('gbk').replace("_最近7天.xls", ""))
+            file_category.append(ix.decode("gbk").replace("_最近7天.xls", ""))
     #   读取txt文件的品类
     w_url = open("dataurl.txt")
     if w_url:
         correctly_info_category = w_url.readlines()
     w_url.close()
     for i in correctly_info_category:
-        # jscategory = json.loads(str(i).decode("gbk"))
         jscategory = json.loads(str(i).decode("gbk"))
         correctly_category.append(jscategory["category"])
     # 求list 差集
@@ -373,6 +355,7 @@ def selectall():
     for i in list_difference:
         for a in correctly_info_category:
             if i in str(a).decode("gbk"):
+                # print str(a).decode("gbk")
                 list_differences.append(str(a))
     # 清除
     correctly_category = []

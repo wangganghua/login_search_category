@@ -17,6 +17,8 @@ from datetime import datetime
 from pytesser import *
 import os
 
+# 专采插座数据
+
 default_encoding = "utf-8"
 if sys.getdefaultencoding() != default_encoding:
     reload(sys)
@@ -34,23 +36,16 @@ redis_url_key = "dpc_maijiawang:url_list"
 user = "avcspider"
 pwd = "aowei123"
 
-
 cookies = "auth=5b21f3cclksjfldjflaskjflfaadc716994841b4aa29415a8d0"
-plDict={'燃气热水器':'热水器','电热水器':'热水器','即热热水器':'热水器','燃热':'热水器','太阳能热水器':'热水器','空气能热水器':'热水器',
-        '嵌入式电烤箱':'电烤箱','嵌入式烤箱':'电烤箱','嵌入式电蒸箱':'电蒸箱','嵌入式蒸箱':'电蒸箱','嵌入式微波炉':'微波炉','酒柜':'冰柜','冷柜':'冰柜'
-         ,'烟灶消套餐':'厨电套餐', '烟灶消套装':'厨电套餐','电陶炉':'电磁炉','吊扇':'电风扇','空调扇':'电风扇','电炖锅':'电蒸炖锅','电蒸锅':'电蒸炖锅'
-        ,'电蒸炉':'电蒸箱','电烤炉':'煎烤机' ,'挂烫机':'电熨斗','榨汁机':'食品料理机','原汁机':'食品料理机','料理机':'食品料理机','扫地机器人':'吸尘器',
- }
-# ----------------------------------------------采集 近7天数据-----------------------------------------------------------
+
+# ----------------------------------------------采集 月度数据-----------------------------------------------------------
 # 加载cookie
 def loadcookie(category):
     try:
         if "智能手机" in category or "投影仪" in category:
             r_cookies = open("cookies_sj.txt", "r")  # 读取配置cookies
-        # elif "音箱" in category or "音响" in category:
-        #     r_cookies = open("cookies_yx.txt", "r")
         else:
-            r_cookies = open("cookies.txt", "r")  # 读取配置cookies
+            r_cookies = open("cookies_cz.txt", "r")  # 读取配置cookies
         if r_cookies:
             ctxt = r_cookies.read()
             cookvalue = json.loads(ctxt)
@@ -62,10 +57,9 @@ def loadcookie(category):
         r_cookies.close()
         return ""
 
+
 # 开始采集
-
-
-def search(cid, savedfilename):
+def search(cid, savedfilename, month):
     tmsc = "天猫商城".encode("gbk")
     path = os.path.abspath(".") + "\\" + datetime.now().strftime("%Y%m%d") + "\\" + tmsc
     if os.path.exists(path):
@@ -77,7 +71,7 @@ def search(cid, savedfilename):
     tm_url ="http://detail.tmall.com/item.htm?id={0}&amp;areaid=&amp;"
     openurl = requests.session()
     # excel 标题
-    booktitle = ["宝贝名称", "宝贝链接", "掌柜", "信用", "标价", "成交价", "销售量", "销售金额"]
+    booktitle = ["宝贝名称", "宝贝链接", "掌柜", "信用", "标价", "成交价", "销售量", "销售金额", "品牌"]
     workbook = xlwt.Workbook(encoding="utf-8", style_compression=0)  # 创建一个workbook
     sheet = workbook.add_sheet("sheet1", cell_overwrite_ok=True)  # 添加一个sheet
     index_title = 0
@@ -100,7 +94,14 @@ def search(cid, savedfilename):
         # openurl.proxies = {'http': 'http://' + proxiip, 'https': 'https://' + proxiip}
         # 若你的代理需要使用HTTP Basic Auth，可以使用 http: // user:password @ host / 语法：eg： "http": "http://user:pass@10.10.1.10:3128/",
         openurl.proxies = {'http': 'http://'+user+':'+pwd+'@' + proxiip+'/', 'https': 'https://'+user+':'+pwd+'@' + proxiip+'/'}
-        url = "http://www.maijia.com/data/industry/hotitems/list?cid={0}&brand=&type=B&date=&pageNo={1}&pageSize=60&orderType=desc".format(cid, intPage)
+        # url = "http://www.maijia.com/data/industry/hotitems/list?cid={0}&brand=&type=B&date=&pageNo={1}&pageSize=60&orderType=desc".format(cid, intPage)
+        # 201710
+        monthdate = month[0:4]+"-"+month[4:6]+"-"+month[6:8]+" 00:00:00"
+        monthdate = time.strptime(monthdate, "%Y-%m-%d %H:%M:%S")
+        monthdate = int(time.mktime(monthdate))*1000
+        # url = "http://www.taosj.com/industry/index.html#/data/hotitems/?cid={0}&pcid=7&brand=&type=B&date={1}&pageNo={2}".format(cid, monthdate, intPage)
+        url = "http://www.taosj.com/data/industry/hotitems/list?cid={0}&brand=&type=B&pageNo={1}&pageSize=60&orderType=desc&date={2}&orderField=undefined".format(
+            cid, intPage, monthdate)
         try:
             time.sleep(1)
             print "第 %s 页 : %s" % (intPage, url)
@@ -123,13 +124,13 @@ def search(cid, savedfilename):
                 wj = data["data"]["list"]
                 if len(wj) == 0:
                     isTrue = False
-                    filename = ("{0}_最近7天.xls".format(savedfilename)).encode("gbk")
+                    filename = ("{0}_{1}月.xls".format(savedfilename, month[4:6])).encode("gbk")
                     print "save file [ %s ] success" % filename
                     workbook.save(path + "\\" + filename)  # 保存
                 for i in wj:
                     baobei = i["title"]
+                    brand = i["brand"]
                     lianjie = tm_url.format(i["id"])
-
                     try:
                         zhanggui = i["sellerNick"]
                     except Exception,e:
@@ -147,21 +148,7 @@ def search(cid, savedfilename):
                     sheet.write(index, 5, chengjiaojia)
                     sheet.write(index, 6, xiaoliang)
                     sheet.write(index, 7, xiaoe)
-                    #存入redis
-                    try:
-                        cateroy=plDict[str(savedfilename).encode('utf-8')]
-                    except Exception,e:
-                        cateroy=savedfilename
-                    try:
-                        str_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                        result={"url": lianjie ,"cateroy":cateroy , "spshop": zhanggui , "ec":  "天猫商城","writetime":str_time}
-                        resultjson = json.dumps(result, encoding='UTF-8', ensure_ascii=False)
-                        # 天猫URL存储位置
-                        redis_ServerTM = redis.Redis(host='117.23.4.139', port=15480, db=0)
-                        redis_key_tmurllist = "DPCmaijiawangtmurl:item"
-                        redis_ServerTM.lpush(redis_key_tmurllist,resultjson)
-                    except Exception, e:
-                        print 'insert redis faild %s'%e.message
+                    sheet.write(index, 8, brand)
                     index += 1
             openurl.keep_alive = False
         except Exception, e:
@@ -177,7 +164,10 @@ def run():
         url_list = str(urldata.pop()).decode("gbk")
         value = json.loads(url_list)
         regeid = re.search("(?<=\?cid=)\d+", value["url"])
-        search(regeid.group(), value["category"])
+        #month = ['20170101', '20170201', '20170301', '20170401', '20170501', '20170601', '20170701', '20170801', '20170901', '20171001']
+        month = ['20171101']
+        for i in month:
+            search(regeid.group(), value["category"], i)
     else:
         print "读取txt url结束,等待1分钟"
 
@@ -186,7 +176,7 @@ def beginwork(istrue):
      global urldata
      urldata = []
      if istrue:
-         w_url = open("dataurl.txt")
+         w_url = open("dataurl_yx.txt")
          if w_url:
              urldata = w_url.readlines()
          w_url.close()
@@ -217,10 +207,12 @@ def login(category):
     print "重新登陆获取cookie"
     post_url = "https://login.maijia.com/user/login?style=login_index&redirectURL=https%3A%2F%2Flogin.maijia.com%2Flogin%2Fforward.htm%3FredirectURL%3Dhttp%253A%252F%252Fwww.maijia.com%252F"
     post_data = urllib.urlencode({
-        "loginCode": "18053276660",
+        "loginCode": "18053276660",     # 公司账号
         "loginPassword": "xiaoxin123"
-        # "loginCode": "13716810221",
+        # "loginCode": "13716810221",       # wgh 账号
         # "loginPassword": "19890305hua"
+        # "loginCode": "15652596582",       # 余青云的账号，专采集  插座数据
+        # "loginPassword": "aowei2016"
     })
     if "智能手机" in category or "投影仪" in category:
         post_data = urllib.urlencode({
@@ -250,7 +242,7 @@ def login(category):
             fwritecookie.writelines(wrcookie)
             fwritecookie.close()
         else:
-            fwritecookie = open("cookies.txt", "w")
+            fwritecookie = open("cookies_cz.txt", "w")
             fwritecookie.writelines(wrcookie)
             fwritecookie.close()
 
@@ -335,9 +327,9 @@ def openbeginwork():
                 print datetime.now()
                 time.sleep(1)
             else:
-                # select = selectall()
-                # if len(select) > 0:
-                #     beginwork(False)
+                select = selectall()
+                if len(select) > 0:
+                    beginwork(False)
                 print "spider mai jia wang"
                 time.sleep(1)
 
@@ -359,7 +351,7 @@ def selectall():
             # file_category.append(ix.decode("gbk").replace("_最近7天.xls", ""))
             file_category.append(ix.decode('gbk').replace("_最近7天.xls", ""))
     #   读取txt文件的品类
-    w_url = open("dataurl.txt")
+    w_url = open("dataurl_yx.txt")
     if w_url:
         correctly_info_category = w_url.readlines()
     w_url.close()
@@ -374,24 +366,20 @@ def selectall():
         for a in correctly_info_category:
             if i in str(a).decode("gbk"):
                 list_differences.append(str(a))
-    # 清除
+    # 清空
     correctly_category = []
     file_category = []
     correctly_info_category = []
     return list_differences
 
 if __name__ == "__main__":
-    # login("智能手机")
     openbeginwork()
-# login()
-# openbeginwork()
-# image()
-# run()
-# print  str(int(time.time() * 1000))
-# import uuid
-# print str(uuid.uuid1()).upper()
-# # print uuid.uuid3("","")
-# print str(uuid.uuid4()).upper()
-#
-# add={"Cookie":"ddddd"}
-# print add["Cookie"]
+    # wgh = '2017-10-01 00:00:00'
+    # whg = "20171001"
+    # axx = whg[0:4]+"-"+whg[4:6]+"-"+whg[6:8] + " 00:00:00"
+    # # # 1506787200000
+    # whg = time.strptime(axx, "%Y-%m-%d %H:%M:%S")
+    # print  whg
+    # wxx = int(time.mktime(whg)*1000)
+    # print wxx
+    # print int(time.mktime(whg)) * 1000
